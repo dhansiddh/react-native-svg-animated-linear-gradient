@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types'
 import {View, StyleSheet, Animated} from 'react-native';
-
-import Expo, { Svg } from 'expo';
+import Svg from 'react-native-svg';
 const AnimatedSvg = Animated.createAnimatedComponent(Svg);
 const {interpolate} = require('d3-interpolate');
 
@@ -62,7 +61,7 @@ export default class SvgAnimatedLinearGradient extends Component {
             offsetValues[0] = this.offsetValueBound(newState.offsetValues[0]);
             offsetValues[1] = this.offsetValueBound(newState.offsetValues[1]);
             offsetValues[2] = this.offsetValueBound(newState.offsetValues[2]);
-            
+
             // Make sure at least two offsets is different
             if (offsetValues[0] !== offsetValues[1] || offsetValues[0] !==  offsetValues[2] || offsetValues[1] !== offsetValues[2]) {
                 this.setState({offsets: offsetValues});
